@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface StoredUser {
+  username: string;
+  email: string;
+  password: string;
+}
 import { AlertCircle, MapPin, Shield } from "lucide-react";
 
 const Login = () => {
@@ -21,13 +27,27 @@ const Login = () => {
     // Simulate authentication delay
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    // Simple demo authentication (in production, use proper auth)
+    // Check demo credentials first
     if (username === "admin" && password === "admin123") {
       localStorage.setItem("isAuthenticated", "true");
       localStorage.setItem("username", username);
       navigate("/dashboard");
+      setIsLoading(false);
+      return;
+    }
+
+    // Check registered users from localStorage
+    const registeredUsers: StoredUser[] = JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+    const user = registeredUsers.find(
+      (u) => (u.username === username || u.email === username) && u.password === password
+    );
+
+    if (user) {
+      localStorage.setItem("isAuthenticated", "true");
+      localStorage.setItem("username", user.username);
+      navigate("/dashboard");
     } else {
-      setError("Invalid username or password. Try admin / admin123");
+      setError("Invalid username or password. Try admin / admin123 or sign up for a new account.");
     }
     setIsLoading(false);
   };
@@ -115,7 +135,13 @@ const Login = () => {
               </Button>
             </form>
 
-            <div className="mt-6 pt-4 border-t border-border">
+            <div className="mt-6 pt-4 border-t border-border space-y-3">
+              <p className="text-sm text-muted-foreground text-center">
+                Don't have an account?{" "}
+                <Link to="/signup" className="text-primary font-medium hover:underline">
+                  Sign up
+                </Link>
+              </p>
               <p className="text-xs text-muted-foreground text-center">
                 Demo credentials: <span className="font-mono text-foreground">admin</span> /{" "}
                 <span className="font-mono text-foreground">admin123</span>
