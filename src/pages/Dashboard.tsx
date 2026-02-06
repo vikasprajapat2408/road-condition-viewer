@@ -9,7 +9,7 @@ import DefectiveRoadMap from "@/components/DefectiveRoadMap";
 import RoadConditionMap from "@/components/RoadConditionMap";
 import DefectivePointDetail from "@/components/DefectivePointDetail";
 import RoadSectionDetail from "@/components/RoadSectionDetail";
-import { defectivePoints, roadSections, DefectivePoint, RoadSection } from "@/data/roadData";
+import { defectivePoints, roadSections, DefectivePoint, RoadSection, weatherEmojis } from "@/data/roadData";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -163,7 +163,7 @@ const Dashboard = () => {
                         >
                           <div className="flex items-center gap-2">
                             <span
-                              className={`w-2 h-2 rounded-full ${
+                              className={`w-2 h-2 rounded-full flex-shrink-0 ${
                                 point.severity === "critical"
                                   ? "bg-road-critical"
                                   : point.severity === "high"
@@ -173,6 +173,9 @@ const Dashboard = () => {
                                   : "bg-road-good"
                               }`}
                             ></span>
+                            <span className="text-base flex-shrink-0" title={point.weather.replace("_", " ")}>
+                              {weatherEmojis[point.weather]}
+                            </span>
                             <span className="text-sm font-medium truncate">{point.location}</span>
                           </div>
                         </button>

@@ -3,6 +3,8 @@ import defectiveRoad2 from "@/assets/defective-road-2.jpg";
 import defectiveRoad3 from "@/assets/defective-road-3.jpg";
 import defectiveRoad4 from "@/assets/defective-road-4.jpg";
 
+export type WeatherCondition = "sunny" | "partly_cloudy" | "cloudy" | "rainy" | "stormy" | "snowy" | "foggy";
+
 export interface DefectivePoint {
   id: string;
   lat: number;
@@ -12,7 +14,18 @@ export interface DefectivePoint {
   severity: "critical" | "high" | "medium" | "low";
   reportedDate: string;
   image: string;
+  weather: WeatherCondition;
 }
+
+export const weatherEmojis: Record<WeatherCondition, string> = {
+  sunny: "☀️",
+  partly_cloudy: "⛅",
+  cloudy: "☁️",
+  rainy: "🌧️",
+  stormy: "⛈️",
+  snowy: "❄️",
+  foggy: "🌫️",
+};
 
 export interface RoadSection {
   id: string;
@@ -34,6 +47,7 @@ export const defectivePoints: DefectivePoint[] = [
     severity: "critical",
     reportedDate: "2026-02-01",
     image: defectiveRoad1,
+    weather: "rainy",
   },
   {
     id: "2",
@@ -44,6 +58,7 @@ export const defectivePoints: DefectivePoint[] = [
     severity: "high",
     reportedDate: "2026-02-03",
     image: defectiveRoad2,
+    weather: "partly_cloudy",
   },
   {
     id: "3",
@@ -54,6 +69,7 @@ export const defectivePoints: DefectivePoint[] = [
     severity: "high",
     reportedDate: "2026-02-04",
     image: defectiveRoad3,
+    weather: "cloudy",
   },
   {
     id: "4",
@@ -64,6 +80,7 @@ export const defectivePoints: DefectivePoint[] = [
     severity: "medium",
     reportedDate: "2026-02-05",
     image: defectiveRoad4,
+    weather: "sunny",
   },
 ];
 
