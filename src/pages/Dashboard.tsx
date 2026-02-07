@@ -9,7 +9,9 @@ import DefectiveRoadMap from "@/components/DefectiveRoadMap";
 import RoadConditionMap from "@/components/RoadConditionMap";
 import DefectivePointDetail from "@/components/DefectivePointDetail";
 import RoadSectionDetail from "@/components/RoadSectionDetail";
-import { defectivePoints, roadSections, DefectivePoint, RoadSection, weatherEmojis } from "@/data/roadData";
+import { useDefectivePoints, useRoadSections } from "@/hooks/useRoadData";
+import { weatherEmojis } from "@/data/roadData";
+import type { DefectivePoint, RoadSection } from "@/lib/api";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -17,6 +19,9 @@ const Dashboard = () => {
   const [selectedPoint, setSelectedPoint] = useState<DefectivePoint | null>(null);
   const [selectedSection, setSelectedSection] = useState<RoadSection | null>(null);
   const username = localStorage.getItem("username") || "User";
+
+  const { points: defectivePoints, isLoading: pointsLoading, isError: pointsError } = useDefectivePoints();
+  const { sections: roadSections, isLoading: sectionsLoading, isError: sectionsError } = useRoadSections();
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
@@ -46,6 +51,9 @@ const Dashboard = () => {
             <div className="flex items-center gap-4">
               {/* Stats */}
               <div className="hidden md:flex items-center gap-4">
+                {(pointsLoading || sectionsLoading) && (
+                  <span className="text-xs text-muted-foreground animate-pulse">Syncing...</span>
+                )}
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-destructive/10 rounded-lg">
                   <AlertTriangle className="w-4 h-4 text-destructive" />
                   <span className="text-sm font-medium text-destructive">{criticalCount} Critical</span>

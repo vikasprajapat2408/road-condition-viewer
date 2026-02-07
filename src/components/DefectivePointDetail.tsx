@@ -1,4 +1,4 @@
-import { DefectivePoint } from "@/data/roadData";
+import type { DefectivePoint } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar, AlertTriangle, X } from "lucide-react";

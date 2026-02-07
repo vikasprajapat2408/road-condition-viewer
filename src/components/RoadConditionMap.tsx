@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { RoadSection } from "@/data/roadData";
+import type { RoadSection } from "@/lib/api";
 
 interface RoadConditionMapProps {
   sections: RoadSection[];
