@@ -1,79 +1,3 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-
-
 ## Frontend for the the Road monitoring project
 The user inteface for the project enables us to:
 1. Login and sign up to the website
@@ -81,7 +5,20 @@ The user inteface for the project enables us to:
 3. Predict the possible pothole formation in the future.
 4. Know about the road condition as per the weather conditions
 
-<img width="914" height="676" alt="image" src="https://github.com/user-attachments/assets/18aac59d-50ee-4587-ae07-80e16ec8410b" />
+## The Login Page:
+<img width="903" height="885" alt="image" src="https://github.com/user-attachments/assets/e81f3865-8d55-4b72-a7d2-9966a5fca30c" />
 
+
+## The Sign up page:
+<img width="981" height="906" alt="image" src="https://github.com/user-attachments/assets/1b05347d-f664-4419-8270-5a8841b777ff" />
+
+
+## Dashboard showing damages on the roads around us:
+<img width="1600" height="773" alt="image" src="https://github.com/user-attachments/assets/6a5d2027-5b19-4d53-8825-fc3529796419" />
+
+## Dashboard showing road quality:
+<img width="1600" height="762" alt="image" src="https://github.com/user-attachments/assets/aab3124d-d3bc-4bd8-ad15-12346123c6e3" />
+
+<img width="1600" height="772" alt="image" src="https://github.com/user-attachments/assets/9f9b702e-84b7-4e8e-a052-c33d13f7a00c" />
 
 
