@@ -13,6 +13,7 @@ import { useDefectivePoints, useRoadSections } from "@/hooks/useRoadData";
 import { weatherEmojis } from "@/data/roadData";
 import type { DefectivePoint, RoadSection } from "@/lib/api";
 
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("defective");
