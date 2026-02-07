@@ -71,3 +71,17 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+
+
+## Frontend for the the Road monitoring project
+The user inteface for the project enables us to:
+1. Login and sign up to the website
+2. Be able to know about the potholes and damaged roads near us
+3. Predict the possible pothole formation in the future.
+4. Know about the road condition as per the weather conditions
+
+<img width="914" height="676" alt="image" src="https://github.com/user-attachments/assets/18aac59d-50ee-4587-ae07-80e16ec8410b" />
+
+
+
